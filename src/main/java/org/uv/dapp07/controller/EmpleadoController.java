@@ -12,7 +12,7 @@ import java.util.Optional;
 
 // <>
 @RestController
-@RequestMapping(value = "empleados")
+@RequestMapping("/empleados")
 public class EmpleadoController {
 
     private final EmpleadoRepository empRep;
