@@ -24,13 +24,6 @@ public class UsuarioController {
         this.passwordEncoder = passwordEncoder;
     }
 
-    @PostMapping
-    public ResponseEntity<Usuario> crear(@RequestBody Usuario usuario) {
-        usuario.setPassword(passwordEncoder.encode(usuario.getPassword()));
-        Usuario u = usuarioRepository.save(usuario);
-        return ResponseEntity.status(HttpStatus.CREATED).body(u);
-    }
-
     @GetMapping
     public List<Usuario> listar() {
         return usuarioRepository.findAll();
